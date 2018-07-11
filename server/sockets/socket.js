@@ -16,11 +16,11 @@ io.on('connection', (client) => {//en el objeto client, tengo toda la inforamcio
     });
 
     //Escuchar el cliente
-    client.broadcast.on('enviarMensaje', (data, callback) => {
+    client.on('enviarMensaje', (data, callback) => {
 
         console.log(data);
 
-        client.emit('enviarMensaje', data);
+        client.broadcast.emit('enviarMensaje', data);
         
         // console.log(mensaje);
         // if(mensaje.usuario){
